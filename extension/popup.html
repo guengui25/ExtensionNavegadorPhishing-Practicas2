@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Analyzer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f8ff;
+      color: #2c3e50;
+      text-align: center;
+      width: 350px;
+    }
+    
+    h2 {
+      color: #1a5276;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      width: 100%;
+      height: 120px;
+      border: 2px solid #3498db;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 14px;
+      resize: vertical;
+      box-sizing: border-box;
+      outline: none;
+    }
+    
+    textarea:focus {
+      border-color: #1abc9c;
+    }
+    
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    button:hover {
+      background-color: #219150;
+    }
+    
+    #result {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      display: none;
+    }
+
+    .safe {
+      background-color: #d4edda;
+      color: #155724;
+      border: 2px solid #28a745;
+    }
+
+    .phishing {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 2px solid #dc3545;
+    }
+
+    .loading {
+      background-color: #fff3cd;
+      color: #856404;
+      border: 2px solid #ffc107;
+    }
+
+    .detail-section {
+      margin-top: 15px;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .detail-section h3 {
+      font-size: 14px;
+      margin: 0 0 8px 0;
+      color: #333;
+    }
+
+    .detail-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .detail-section li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      font-size: 12px;
+      word-break: break-all;
+    }
+
+    .status {
+      margin-right: 5px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .status.safe {
+      color: green;
+    }
+
+    .status.suspicious {
+      color: orange;
+    }
+
+    .status.error {
+      color: grey;
+    }
+
+    .status.pending {
+      color: blue;
+    }
+
+    .status.neutral {
+      color: #666;
+    }
+
+    .safe {
+      background-color: #e9ffef;
+      border: 1px solid #8ad299;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .phishing {
+      background-color: #ffebeb;
+      border: 1px solid #e99a9a;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .loading {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <h2>Phishing Analyzer</h2>
+  <textarea id="textInput" placeholder="Paste the text to analyze here..."></textarea>
+  <button id="analyzeBtn">Analyze</button>
+  <div id="result"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

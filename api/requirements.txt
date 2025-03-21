@@ -1,0 +1,7 @@
+Flask
+flask-cors
+tensorflow
+joblib
+requests
+python-dotenv
+nltk

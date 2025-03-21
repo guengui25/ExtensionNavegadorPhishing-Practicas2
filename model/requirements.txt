@@ -1,0 +1,9 @@
+pandas
+tqdm
+scikit-learn
+nltk
+joblib
+tensorflow
+matplotlib
+seaborn
+numpy
